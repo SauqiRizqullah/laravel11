@@ -10,3 +10,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about', ['name' => 'Ultimate Attack']);
 });
+
+Route::get('/blog', function () {
+    return view('blog');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
