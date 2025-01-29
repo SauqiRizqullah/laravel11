@@ -26,7 +26,7 @@ Route::get('/posts', function () {
     // }
 
     // $posts = Post::latest()->get();
-    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category']))->latest()->get()]); // kalau gak ada request, tampilkan semua (->get())
+    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category', 'author']))->latest()->get()]); // kalau gak ada request, tampilkan semua (->get())
 });
 
 Route::get('/posts/{post:slug}', function(Post $post){
