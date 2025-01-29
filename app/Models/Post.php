@@ -50,6 +50,8 @@ class Post extends Model
     // protected $primaryKey = 'post_id';
     protected $fillable = ['title', 'author', 'slug', 'body'];
 
+    protected $with = ['author', 'category'];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
