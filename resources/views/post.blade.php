@@ -32,6 +32,7 @@ URL: https://flowbite.com/docs/components/typography/
     <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
         <article class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
             <header class="mb-4 lg:mb-6 not-format">
+
                 <a href="/posts" class="font-medium text-xs text-blue-600 hover:underline">&laquo; Back to all posts</a>
                 <address class="flex items-center mb-6 not-italic">
                     <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -41,7 +42,7 @@ URL: https://flowbite.com/docs/components/typography/
                             <p class="text-base text-gray-500 dark:text-gray-400 mb-1">
                                 {{ $post->created_at->diffForHumans() }}
                             </p>
-                            <a href="/categories/{{ $post->category->slug }}"
+                            <a href="/posts?category={{ $post->category->slug }}"
                                 class="text-base text-gray-500 hover:underline">
                             <span
                                 class="bg-{{ $post->category->color }}-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800">

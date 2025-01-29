@@ -20,13 +20,13 @@ Route::get('/posts', function () {
 
     // dump(request('search'));
 
-    $posts = Post::latest(); // select * from
-    if (request('search')) { //jika ada request dari search bar
-        $posts->where('title', 'like', '%' . request('search') . '%');
-    }
+    // $posts = Post::latest(); // select * from
+    // if (request('search')) { //jika ada request dari search bar
+    //     $posts->where('title', 'like', '%' . request('search') . '%');
+    // }
 
     // $posts = Post::latest()->get();
-    return view('posts', ['title' => 'Blog', 'posts' => $posts->get()]); // kalau gak ada request, tampilkan semua (->get())
+    return view('posts', ['title' => 'Blog', 'posts' => Post::filter(request(['search', 'category']))->latest()->get()]); // kalau gak ada request, tampilkan semua (->get())
 });
 
 Route::get('/posts/{post:slug}', function(Post $post){
