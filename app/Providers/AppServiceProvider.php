@@ -22,5 +22,6 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Model::preventLazyLoading(! $this->app->isProduction());
+        // Paginator::useBootstrapFive();
     }
 }
